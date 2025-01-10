@@ -3,7 +3,7 @@ Film "rgb"
     "float iso" [ 110 ]
     "integer xresolution" [ 1200 ]
     "integer yresolution" [ 900 ]
-    "string filename" "bunny-fur_spec.exr"
+    "string filename" "bunny-fur_spec_1.exr"
 
 LookAt 0 2 5
     .02 .47 0
@@ -12,9 +12,9 @@ LookAt 0 2 5
 Camera "perspective"
     "float fov" [ 18 ]
 
-Sampler "halton" "integer pixelsamples" 8192
+Sampler "halton" "integer pixelsamples" 2000
 
-Integrator "volpath" "integer maxdepth" 20
+Integrator "volpath" "integer maxdepth" 5
 
 WorldBegin
 
@@ -53,7 +53,8 @@ Scale 7 7 7
 
 # bunny
 Material "diffuse"
-    "rgb reflectance" [ 0.35 0.31 0.3 ]
+    "spectrum reflectance" [ 300 .3  400 .6   410 .65  415 .8  500 .2  600 .1 ]
+    #"rgb reflectance" [ 0.35 0.31 0.3 ]
 Include "geometry/bunnymesh.pbrt"
 
 # fur
